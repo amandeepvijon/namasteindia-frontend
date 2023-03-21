@@ -1,0 +1,42 @@
+<div *ngIf="'cookies'">
+    <button    #closeModal    class="close-btn" mat-button aria-label="close dialog" mat-dialog-close (click)="cancel()">&times;</button>
+   <div class="icon text-center policy-icon-style">
+    <img src="assets/img/policy-icon.svg" alt="policy">
+   </div>
+
+    <mat-dialog-content *ngIf="'impressum'">
+        <div class="main-box">
+         <p class="cookies-para">
+          Damit wir unsere Webseiten für Sie optimieren und personalisieren können würden wir gerne Cookies verwenden. Zudem werden Cookies gebraucht, um Funktionen von Soziale Media Plattformen anbieten zu können, Zugriffe auf unsere Webseiten zu analysieren und Informationen zur Verwendung unserer Webseiten an unsere Partner in den Bereichen der sozialen Medien, Anzeigen und Analysen weiterzugeben. Sind Sie widerruflich mit der Nutzung von Cookies auf unseren Webseiten einverstanden?
+         </p>
+          </div>
+
+      <div class="cookies-footer">
+        <button class="button button1"  (click)="Decline()">Ablehnen</button>
+        <button  class="button button2" (click)="Allow()">Akzeptieren</button>
+      </div>
+    </mat-dialog-content>
+
+</div>
+ <!-- <ng-template #callAPIDialog>
+     <button    #closeModal    class="close-btn" mat-button aria-label="close dialog" mat-dialog-close (click)="cancel()">&times;</button>
+    <div class="icon text-center policy-icon-style">
+     <img src="assets/img/policy-icon.svg" alt="policy">
+    </div>
+     <mat-dialog-content *ngIf="'impressum'">
+         <div class="main-box">
+
+          <p class="cookies-para">
+           Damit wir unsere Webseiten für Sie optimieren und personalisieren können würden wir gerne Cookies verwenden. Zudem werden Cookies gebraucht, um Funktionen von Soziale Media Plattformen anbieten zu können, Zugriffe auf unsere Webseiten zu analysieren und Informationen zur Verwendung unserer Webseiten an unsere Partner in den Bereichen der sozialen Medien, Anzeigen und Analysen weiterzugeben. Sind Sie widerruflich mit der Nutzung von Cookies auf unseren Webseiten einverstanden?
+          </p>
+
+           </div>
+
+
+       <div class="cookies-footer">
+         <button class="button button1"  (click)="Decline()">Ablehnen</button>
+         <button  class="button button2" (click)="Allow()">Akzeptieren</button>
+       </div>
+     </mat-dialog-content>
+
+   </ng-template> -->

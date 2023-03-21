@@ -1,0 +1,109 @@
+
+  <footer>
+    <div class="footer-pettern">
+
+
+    <div class="container">
+      <div class="up-footer">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 col-12 col">
+            <div class="footer-widget social-widget">
+              <div class="list-unstyled footer-contact">
+                <h6>{{contactData?.Title}}</h6>
+                <p class="ftr_pg_lnk2">{{contactData?.Description}}</p>
+                <br>
+                <ul>
+                  <li ><img src="assets/img/place-icon.svg" alt="">
+                      <div [innerHTML]="contactData?.Address"></div>
+                  </li>
+                  <li><img src="assets/img/f-phone-icon.svg" alt="">
+                    <a href="tel:06190 3735">{{contactData?.Phone}}</a>
+                  </li>
+
+                </ul>
+              </div>
+  <ul class="social-list">
+  </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 text-center col">
+              <div class="footer-logo">
+                <img [src]="env.apiBaseUrl + '/getFooterImage/'+  env.restaurantId"   alt="">
+              </div>
+            <div class="footer-widget contact-widget">
+              <h3 class="footer-heading-off">
+                <!-- Öffnungszeiten -->{{timeData?.Title}}
+              </h3>
+              <p [innerHTML]="timeData?.TimeZone"></p>
+              <!-- <p> 11:00 - 14:00 &amp; 17:00 - 23:00 Uhr
+              </p>
+              <p>Sonntag: 11:00 - 22:30 Uhr
+            </p> -->
+        <div>
+          <!-- <p>Montag ist Ruhetag</p> -->
+        </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 col-12 col">
+            <div class="footer-widget newsletter-widget">
+              <ul class="list-unstyled quick-links">
+                <!-- <li><a href="index.html">Home</a></li>
+                <li><a routerlink="/contact">Contacts  </a></li> -->
+                <h6> Quick links</h6>
+                <ul>
+                  <li class="link" data-toggle="collapse" data-target=".navbar-collapse.show" (click)="activeClass.setActiveClass('hero-section');scrollTo('hero-section')">
+                    <a  href="" >Home </a>
+                  </li>
+                  <li class="link" data-toggle="collapse" data-target=".navbar-collapse.show" (click)="activeClass.setActiveClass('about-section');scrollTo('about-section')">
+                    <a   routerLinkActive="active" routerLink="" >Über Uns</a>
+                  </li>
+                  <li class="link"  data-toggle="collapse" data-target=".navbar-collapse.show" (click)="activeClass.setActiveClass('menu-section'); scrollTo('menu-section')">
+                    <a   routerLinkActive="active"  routerLink="" >Speisekarte</a>
+                  </li>
+                  <li class="link" data-toggle="collapse" data-target=".navbar-collapse.show" (click)="activeClass.setActiveClass('gallery-section-heading'); scrollTo('gallery-section-heading')">
+                    <a   routerLinkActive="active" routerLink="">Galerie </a>
+                  </li>
+                  <li class="link" data-toggle="collapse" data-target=".navbar-collapse.show" (click)="activeClass.setActiveClass('contact-map');scrollTo('contact-map')">
+                    <a  routerLinkActive="active" routerLink="">Kontakt </a>
+                  </li>
+                 </ul>
+                 <!-- quick links -->
+              </ul>
+              <!-- list-unstyled -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-sm-8 col-12">
+          <!-- <div class="footer-links-policy">
+            <ul class="footer-social-media">
+              <li><a href="{{socialLinks?.linkOne}}"  target="_blank"><i class="fa fa-facebook" style="font-size:22px;" aria-hidden="true"></i></a></li>
+
+            </ul>
+            <ul class="footer-quick-link">
+              <li><a (click)="impre()"  target="_blank">Impressum</a></li>
+              <li>
+                <a  (click)="datenschutz()" target="_blank">Datenschutz</a>
+              </li>
+            </ul>
+          </div> -->
+        </div>
+        <!-- <div class="col-lg-6 col-sm-4 col-12 back-to-top">
+      <p class="go-top">Unterstütz von<a     href="{{linkUrl?.urlData}}"><img src="assets/img/footer-boodbee.png" alt="" style="width:110px;    text-align: center;
+                margin-bottom: 9px;"></a></p>
+        </div> -->
+      </div>
+    </div>
+  </div><!--footer pettern-->
+  </footer>
+  <!-- End footer -->
+<!-- dialog for privacy policy  -->
+<section class="footer-fixed-bar" *ngIf="scrolled">
+<a class="order-btn" href="{{linkUrl?.urlData}}"> <img src="assets/img/order-online-icon.svg"> Jetzt Bestellen!</a>
+<a class="f-reser-brt" (click)="scrollTop()"  [routerLink]="['/reservierung']"><img src="assets/img/table-booking-icon.svg">Reservierung</a>
+</section>
+<!-- *ngIf="scrolled" -->
+
+
+

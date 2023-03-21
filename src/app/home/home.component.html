@@ -1,0 +1,500 @@
+
+    <!-- <section id="hero-section">
+   <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="1000">
+     <div class="carousel-indicators">
+       <button type="button"  data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+        class="active"  aria-current="true" aria-label="Slide 1"></button>
+       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+     </div>
+     <div class="carousel-inner">
+      <ng-container *ngFor="let media of url; index as i">
+        <div class="carousel-item" [ngClass]="i == 1 ? 'active' : ''">
+          <img   [src]="env.apiBaseUrl +'/banner/63a19d3d27a57d8a6d2e4408?file=' + media?.link"   class="d-block w-100"  alt="namaste-india">
+         <div class="carousel-caption text-data">
+         <h1 class="head-content">{{media?.title}}</h1>
+         <p>{{media?.description}}</p>
+         </div>
+       </div>
+      </ng-container>
+
+       </div>
+     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions">
+       <span class="carousel-control-prev-icon previous-btn" aria-hidden="true">
+       <i class="fa fa-angle-left" aria-hidden="true"></i>
+ </span>
+     </button>
+     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions">
+       <span class="carousel-control-next-icon" aria-hidden="true"  class="btn-next-previous next-btn"
+       aria-hidden="true" ><i class="fa fa-angle-right" aria-hidden="true"></i></span>
+     </button>
+   </div>
+ </section> -->
+ <section id="home-slider-section">
+  <div id="container" >
+  <swiper class="slider"
+  [slidesPerView]="1"
+  [navigation]="true"
+  [breakpoints]="breakPoints"
+  [loop]="true"
+  [pagination]="{clickable:true}"
+  [spaceBetween]="50"
+>
+  <ng-template swiperSlide *ngFor="let media of url">
+      <img   [src]="env.apiBaseUrl +'/banner/'+  env.restaurantId  +'?file=' + media?.link"    class="d-block w-100 home-banner-img"  alt="namaste-india">
+     <div class="carousel-caption text-data">
+    <h1 class="head-content">{{media?.title}}</h1>
+    <p>{{media?.description}}</p>
+    </div>
+  </ng-template>
+
+</swiper>
+</div>
+ </section>
+
+
+ <div>
+   <section id="about-section">
+     <div  class="container">
+       <div class="row">
+     <div class="col-lg-6  col-md-6 col-12 home-aboutimg">
+        <div class="about-img-1">
+        <img  class="img-fluid mx-3"  [src]="env.apiBaseUrl +'/about-us/'+ env.restaurantId +'?file=' + url"  alt="namaste-india">
+        </div>
+     </div>
+         <div class="col-lg-6 col-md-6 col-12 about-col">
+           <div  class="about-cnt">
+             <h2>{{aboutsection?.title}}</h2>
+             <p>{{aboutsection?.summary}}</p>
+           </div>
+           <div class="more-about-info">
+              <h6>Für weitere Informationen rufen Sie uns an</h6>
+              <h3><img src="assets/img/phone-icon.svg" alt="namaste-india"> <a href="tel:{{aboutsection?.phone}}">0{{aboutsection?.phone}}</a></h3>
+           </div>
+         </div>
+       </div>
+
+     </div>
+    </section>
+   <!-- banner-section
+     ================================================== -->
+   <section class="banner-section2">
+     <div class="container">
+       <div class="banner-box">
+         <h2 class="mb-3 animated wow slideInDown">Reservieren Sie Einen Tisch</h2>
+         <button type="submit"  class="btn-submit animated wow slideInUp" routerLink="/reservierung" >Zur Reservierung</button>
+       </div>
+     </div>
+   </section>
+   <!-- End banner section -->
+   <!-- menu-section
+     ================================================== -->
+   <section class="menu-section" id="menu-section">
+     <div class="menu-box pizza-menu">
+       <div class="container">
+        <div  class="row">
+          <div class="col-lg-12 section-heading text-center">
+            <h5>Spießekarte</h5>
+            <h3>Unser Menü</h3>
+          </div>
+        </div>
+         <div class="row">
+           <div class="col-lg-5 col-md-12">
+             <!-- <div class="spcial-offer-area">
+                  <div class="spcial-offer-cnt">
+                    <img class="offer-image-ratating" [src]="env.apiBaseUrl + '/getPricingImage/'+  env.restaurantId  "  alt="namaste-india">
+                    <div class="spcial-offer-label">
+                      <span>Spezialangebot</span>
+                      <h4>Chicken Nuggets</h4>
+                     </div>
+                     <div class="menu-discount-box">
+
+                      <h3>
+                        € 9.90</h3>
+                    </div>
+                    <a   href="{{linkUrl?.urlData}}"   target="_blank" >Jetzt Bestellen!</a>
+                  </div>
+             </div> -->
+             <div class="image-holder mt-5" *ngFor="let url of MenuData">
+               <img [src]=" env.apiBaseUrl +'/getMenuImage/'+  env.restaurantId  +'?file=' + url"  alt="namaste-india">
+             </div>
+           </div>
+           <div class="col-lg-6 offset-lg-1 col-md-12">
+             <div class="menu-holder">
+              <h6>Special Lunch</h6>
+               <h3>{{categoryData?.category}}</h3>
+               <img class="menu-top-left" src="assets/img/menu-top-left.svg" alt="menu-top-left">
+              <img class="menu-top-right" src="assets/img/menu-top-right.svg" alt="menu-top-right">
+              <img class="menu-btm-right" src="assets/img/menu-btm-right.svg" alt="menu-btm-right">
+              <img class="menu-btm-left" src="assets/img/menu-btm-left.svg" alt="menu-btm-left">
+               <ul class="menu-list">
+                 <li>
+                   <div class="menu-cont">
+                     <h4  *ngFor="let menuData of ItemsData">
+                       <span class="title-menu"> {{menuData?.item}}</span>
+                       <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                       <span class="price">{{menuData?.price}} €</span>
+                     </h4>
+                   </div>
+                 </li>
+                 <!-- <li>
+                   <div class="menu-cont">
+                     <h4>
+                       <span class="title-menu">Olympos Hellas Platte</span>
+                       <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                       <span class="price">18,50 €</span>
+                     </h4>
+                   </div>
+                 </li>
+                 <li>
+                   <div class="menu-cont">
+                     <h4>
+                       <span class="title-menu">Souvlaki</span>
+                       <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                       <span class="price">14,50 €</span>
+                     </h4>
+                   </div>
+                 </li>
+                 <li>
+                   <div class="menu-cont">
+                     <h4>
+                       <span class="title-menu">Riganato</span>
+                       <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                       <span class="price">15,50 €</span>
+                     </h4>
+                   </div>
+                   </li>
+                   <li>
+                     <div class="menu-cont">
+                       <h4>
+                         <span class="title-menu">Riganato Spezial</span>
+                         <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                         <span class="price">15,50 €</span>
+                       </h4>
+                     </div>
+                     </li>
+                   <li>
+                     <div class="menu-cont">
+                       <h4>
+                         <span class="title-menu">Gyros Teller</span>
+                         <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                         <span class="price">14,50 €</span>
+                       </h4>
+                     </div>
+                   </li>
+                   <li>
+                     <div class="menu-cont">
+                       <h4>
+                         <span class="title-menu">Gyros Pfanne </span>
+                         <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                         <span class="price">15,50 €</span>
+                       </h4>
+                     </div>
+                   </li>
+                   <li>
+                     <div class="menu-cont">
+                       <h4>
+                         <span class="title-menu">Gyros überbacken</span>
+                         <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                         <span class="price">15,50 €</span>
+                       </h4>
+                     </div>
+                   </li>
+                   <li>
+                     <div class="menu-cont">
+                       <h4>
+                         <span class="title-menu"> Lammkoteletts</span>
+                         <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                         <span class="price">19,60 €</span>
+                       </h4>
+                     </div>
+                   </li>
+                   <li>
+                     <div class="menu-cont">
+                       <h4>
+                         <span class="title-menu">Lammfilets </span>
+                         <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                         <span class="price">12,50 €</span>
+                       </h4>
+                     </div>
+                   </li>
+                   <li>
+                     <div class="menu-cont">
+                       <h4>
+                         <span class="title-menu"> Putenspieß  </span>
+                         <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                         <span class="price">16,50 €</span>
+                       </h4>
+                     </div>
+                   </li>
+                   <li>
+                     <div class="menu-cont">
+                       <h4>
+                         <span class="title-menu">Mix - Teller</span>
+                         <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                         <span class="price">17,00 €</span>
+                       </h4>
+                     </div>
+                   </li>
+                   <li>
+                     <div class="menu-cont">
+                       <h4>
+                         <span class="title-menu">Mix Grill</span>
+                         <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                         <span class="price">19,50 €</span>
+                       </h4>
+                     </div>
+                   </li>
+                   <li>
+                     <div class="menu-cont">
+                       <h4>
+                         <span class="title-menu"> Lammsteak </span>
+                         <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                         <span class="price">17,00 €</span>
+                       </h4>
+                     </div>
+                   </li>
+                   <li>
+                     <div class="menu-cont">
+                       <h4>
+                         <span class="title-menu">Zarter Lammspieß </span>
+                                                <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                         <span class="price">21,50 €
+                         </span>
+                       </h4>
+                     </div>
+                   </li> -->
+               </ul>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+ <div class="text-center">
+   <button type="submit"  class="btn-submit text-center"   [routerLink]="['/speisekarte']">Zur Komplette Speisekarte</button>
+ </div>
+   </section>
+   <!-- End menu section -->
+   <section class="testimonial-section">
+     <div class="container">
+        <div class="row">
+              <div class="col-lg-5 col-md-4 col-12">
+                  <div class="testimonails-header-col">
+                      <h5>Testimonials</h5>
+                      <h3>Kunden Bewertungen</h3>
+                      <p>Wir nehmen Kundenreaktion sehr wichtig, hier sind einige Kundenfeedback.</p>
+                      <!-- <div class="reviews-qrcode">
+                        <h4>Um unsere Google-Bewertungen zu sehen, scannen Sie bitte hier</h4>
+                        <span>
+                          <img  src="assets/img/qrcode.png">
+                        </span>
+                      </div> -->
+                  </div>
+              </div>
+            <div class="col-lg-7 col-md-8 col-12">
+
+              <div class="testimonial-box owl-wrapper">
+                  <span class="testimonials-quote-icon">
+                    <img  src="assets/img/quote-icon.svg">
+                  </span>
+                <swiper
+                [navigation]="true"
+                [spaceBetween]="50"
+                [slidesPerView]="1"
+                [breakpoints]="breakPoints"
+                [loop]="true"
+                [pagination]="{clickable:true}"
+                  class="mySwiper">
+
+              <ng-template swiperSlide  *ngFor="let data of getdata" >  <div class="item">
+                <div class="testimonial-post">
+                  <div class="testimonials-header">
+                    <h3>{{data?.userName}}</h3>
+                    <ul>
+                      <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    </ul>
+                  </div>
+                  <p>{{data?.review}}</p>
+                </div>
+              </div>
+            </ng-template>
+                <!-- <ng-template swiperSlide>   <div class="item">
+                  <div class="testimonial-post">
+                    <div class="testimonials-header">
+                      <h3> Ala Al-Shargabi</h3>
+                      <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                      </ul>
+                    </div>
+                    <p>“ Dies ist einer meiner Lieblingsorte in der Nachbarschaft. Das Essen ist lecker und die Portionen sind sehr großzügig. Die Atmosphäre ist warm und das Personal ist sehr nett und freundlich. Die Preise sind sehr sehr gut, besonders im Vergleich zu anderen griechischen Restaurants in der Umgebung
+                      ”</p>
+                  </div>
+                </div></ng-template>
+                <ng-template swiperSlide>  <div class="item">
+                  <div class="testimonial-post">
+
+                    <div class="testimonials-header">
+                      <h3>Janina Schöne</h3>
+                      <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                      </ul>
+                    </div>
+                    <p>“Einfach unglaublich. Wir reservierten einen Tisch "für 4, konnten auf 10 erweitert werden" und sie öffneten ihren Bankettraum für uns. Am Ende kamen 15 Kollegen, aber die Küche zuckte nicht einmal. Jede Mahlzeit war lecker, heiß, schnell und der Service war einfach erstklassig. Toll. Sie haben einen großen Eindruck auf meine Kollegen gemacht
+                      ”</p>
+                  </div>
+                </div> </ng-template>
+                <ng-template swiperSlide>     <div class="item">
+                  <div class="testimonial-post">
+
+                    <div class="testimonials-header">
+                      <h3>Maike Lemgen</h3>
+                      <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                      </ul>
+                    </div>
+                    <p>“Ausgezeichnetes griechisches Restaurant mit leckerem Essen und sehr unterhaltsamem und freundlichem Personal. Ihre Speisen und Getränke sind von ausgezeichneter Qualität und ihr Souvlaki ist eines der besten, die ich in Frankfurt probiert habe. Mehr als empfehlen diesen Ort. Zwei Daumen hoch ”</p>
+                  </div>
+                </div> </ng-template> -->
+              </swiper>
+              </div>
+
+            </div>
+        </div>
+    </div>
+ </section>
+
+   <!-- gallery-section ================================================== -->
+  <section class="gallery-section-heading" id="gallery-section-heading">
+       <div class="container">
+         <div class="row">
+          <div class="col-lg-12 section-heading text-center">
+            <h5>Galerie</h5>
+            <h3>Unsere Galerie</h3>
+          </div>
+         </div>
+      </div>
+     </section>
+   <section class="gallery-section">
+        <div class="container-fluid">
+          <div class="row">
+            <!-- <div class="col-lg-4 col-md-4 col-xs-12">
+              <div class="testimonails-header-col">
+                <h5>Testimonials</h5>
+                <h3>Customer Feedback</h3>
+                <p>It is a long established fact that a reader will be distracted.Various versions have evolved over.</p>
+            </div>
+          </div> -->
+            <div class="col-lg-12 col-md-12 col-xs-12">
+              <div class="row">
+                <div class="col-lg-3 col-md-4  col-6 gallery-col" *ngFor="let url of galleryData; index as i">
+                  <img   [src]="env.apiBaseUrl + '/getImage/' +  env.restaurantId  +'?file=' + url?.filename" (click)="openModal(url.filename, i);" class="hover-shadow cursor gallery-img">
+                </div>
+                <!-- <div class="col-lg-3 col-md-6 col-12 gallery-col">
+                  <img  src="assets/img/zumengel/gallery-2.jpg"  onclick="openModal();currentSlide(2)" class="hover-shadow cursor gallery-img">
+                </div> -->
+                <!-- <div class="col-lg-3 col-md-6 col-12 gallery-col">
+                  <img  src="assets/img/zumengel/gallery-3.jpg"  onclick="openModal();currentSlide(3)" class="hover-shadow cursor gallery-img">
+                </div> -->
+              <!-- <div class="col-lg-3 col-md-6 col-12 gallery-col">
+                  <img  src="assets/img/zumengel/gallery-4.jpg"  onclick="openModal();currentSlide(4)" class="hover-shadow cursor gallery-img">
+
+                </div> -->
+                <!-- <div class="col-lg-3 col-md-6 col-12 gallery-col">
+                  <img  src="assets/img/zumengel/gallery-5.jpg"  onclick="openModal();currentSlide(5)" class="hover-shadow cursor gallery-img">
+
+                </div> -->
+                <!-- <div class="col-lg-3 col-md-6 col-12 gallery-col">
+                  <img  src="assets/img/zumengel/gallery-6.jpg"  onclick="openModal();currentSlide(6)" class="hover-shadow cursor gallery-img">
+
+                </div> -->
+                <!-- <div class="col-lg-3 col-md-6  col-12 gallery-col">
+                  <img  src="assets/img/zumengel/gallery-7.jpg" style="width:100%" onclick="openModal(7);currentSlide(7)" class="hover-shadow cursor gallery-img">
+
+                </div> -->
+                <!-- <div class="col-lg-3 col-md-6  col-12 gallery-col">
+                  <img  src="assets/img/zumengel/gallery-8.jpg"  onclick="openModal();currentSlide(8)" class="hover-shadow cursor gallery-img">
+                </div> -->
+              </div>
+            </div>
+          </div>
+       </div>
+
+       <div id="myModal" class="modal">
+         <span class="close cursor close-btn" onclick="closeModal()">&times;</span>
+         <div class="modal-content">
+
+           <div class="mySlides">
+             <img  [src]="env.apiBaseUrl + '/getImage/'+  env.restaurantId  +'?file=' + setSelectedImage" class="img-slide" alt="namaste-india">
+           </div>
+           <!-- <div class="mySlides">
+             <img  src="assets/img/zumengel/gallery-2.jpg" class="img-slide" alt="namaste-india">
+           </div> -->
+
+           <!-- <div class="mySlides">
+             <img  src="assets/img/zumengel/gallery-3.jpg" class="img-slide" alt="namaste-india">
+           </div> -->
+<!--
+           <div class="mySlides">
+             <img  src="assets/img/zumengel/gallery-4.jpg" class="img-slide" alt="namaste-india">
+           </div> -->
+
+           <!-- <div class="mySlides">
+             <img  src="assets/img/zumengel/gallery-5.jpg" class="img-slide" alt="namaste-india">
+           </div> -->
+
+           <!-- <div class="mySlides">
+             <img  src="assets/img/zumengel/gallery-6.jpg" class="img-slide" alt="namaste-india">
+           </div> -->
+
+           <!-- <div class="mySlides">
+             <img  src="assets/img/zumengel/gallery-7.jpg" class="img-slide" alt="namaste-india">
+           </div> -->
+
+           <!-- <div class="mySlides">
+             <img  src="assets/img/zumengel/gallery-8.jpg"class="img-slide" alt="namaste-india">
+           </div> -->
+           <a class="prev"   (click)="nextSlide(-1)">&#10094;</a>
+           <a class="next"   (click)="nextSlide(1)">&#10095;</a>
+           <div class="caption-container">
+             <p id="caption"></p>
+           </div>
+         </div>
+       </div>
+   </section>
+  <section id="contact-map" class="contact-map p-0">
+    <!-- <div>{{locationData}}</div> -->
+<iframe *ngIf="locationData" [src]="locationData"
+width="100%" height="450" style="border:0;" allowfullscreen=""></iframe>
+    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.887524870617!2d8.484389551187059!3d50.06966802250872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bda1ae2d8657b7%3A0x2af15faac276a116!2sHauptstra%C3%9Fe%2025%2C%2065795%20Hattersheim%20am%20Main%2C%20Germany!5e0!3m2!1sen!2sin!4v1666268663694!5m2!1sen!2sin"
+    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+  </section>
+ </div>
+ <!-- End Container -->
+ <section>
+  <div class="cookiebanner" *ngIf="cookiesbox">
+    <div class="cookiebanner-content">
+      <h3>Cookie Policy</h3>
+      <a href="#">Sind Sie widerruflich mit der Nutzung von Cookies auf unseren Webseiten einverstanden?</a>
+    </div>
+    <div class="cookiebanner-actions">
+      <button type="button" class="btn btn-warning  cookiebanner-allow"  (click)="Decline()">Deny</button>
+      <button type="button" class="btn btn-info cookiebanner-allow" (click)="Allow()">Allow</button>
+      <a href="#" (click)="Decline()"  class="cookiebanner-close" data-consent="granted">×</a>
+      </div>
+  </div>
+</section>

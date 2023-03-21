@@ -1,0 +1,395 @@
+.head-content,
+.heading2,
+h2 {
+    font-family: Forum, cursive;
+    cursor: pointer
+}
+
+.main-header.active {
+    box-shadow: 0 0 20px rgb(41 41 41 / 50%);
+    -webkit-box-shadow: 0 0 20px rgb(41 41 41 / 15%);
+    -moz-box-shadow: 0 0 20px rgba(41, 41, 41, .15);
+    -ms-box-shadow: 0 0 20px rgba(41, 41, 41, .15);
+    -o-box-shadow: 0 0 20px rgba(41, 41, 41, .15)
+}
+
+.reservation-btn,
+.reservation-menu {
+    display: none
+}
+
+.other-posts__desc,
+.paragraph,
+p {
+    color: #757575;
+    font-size: 17px;
+    margin-top: 0;
+    line-height: 34px
+}
+
+.heading2,
+h2 {
+    color: #006;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 48px
+}
+
+.head-content,
+.next-content {
+    color: #fff !important;
+    text-transform: none;
+    padding: 0 42px;
+    font-weight: 400
+}
+
+.head-content {
+    font-size: 84px;
+    line-height: 90px;
+    margin-top: 0
+}
+
+.next-content {
+    font-size: 40px;
+    font-family: Lora, sans-serif
+}
+
+.heading4,
+.title-section span,
+h4,
+section.about-section .about-box .content-holder>span,
+section.team-section .team-box .team-post span {
+    text-transform: uppercase
+}
+
+.about-section h4.title-small {
+    margin-bottom: 0
+}
+
+.about-section p {
+    letter-spacing: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #757575;
+    margin-top: 0
+}
+
+.order-now-btn {
+    display: flex;
+    justify-content: end;
+    align-items: center
+}
+
+.order-now-btn a {
+    display: inline-block;
+    background: #ea462b;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 40px;
+    border-radius: 5px;
+    border: 2px solid #ea462b;
+    font-size: 20px;
+    margin: auto
+}
+
+.order-now-btn a:hover {
+    color: #ea462b;
+    background: 0 0
+}
+
+section#about-section {
+    padding: 0 0 60px;
+    scroll-margin: 55px;
+    position: relative;
+    background: url("/assets/img/abt-bg-img2.svg") center right/contain no-repeat, url("/assets/img/shape1.png") top 100px left/19% no-repeat
+}
+
+section#about-section .container {
+    border-top: 1px solid #f2f2f2;
+    padding-top: 40px
+}
+
+section#about-section:before {
+    background: url('/assets/img/section-shape-img2.png') bottom center/100% 100% no-repeat;
+    width: 100%;
+    height: 58px;
+    bottom: -40px;
+    left: 0;
+    content: "";
+    position: absolute
+}
+
+#about-section h2 {
+    margin-bottom: 10px;
+    color: #006;
+    margin-top: 15px
+}
+
+.about-section h2 {
+    margin-bottom: 10px !important
+}
+
+.services-box p {
+    color: #757575;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 22px;
+    margin-top: 10px
+}
+
+.banner-box p {
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 15px 0 30px
+}
+
+#order-online-section {
+    background: #fff;
+    position: relative;
+    margin-top: -73px;
+    z-index: 9;
+    padding: 10px 0 15px
+}
+
+#order-online-section:before {
+    background: url('/assets/img/section-shape-img1.png') top center/100% 100% no-repeat;
+    width: 100%;
+    height: 40px;
+    top: -39px;
+    left: 0;
+    content: "";
+    position: absolute
+}
+
+#order-online-section h3 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 38px;
+    font-family: lora;
+    cursor: pointer
+}
+
+#order-online-section h3 em {
+    color: #ea462b
+}
+
+#order-online-section p {
+    font-size: 15px;
+    font-style: italic;
+    line-height: 21px
+}
+
+#order-online-section .order-online-button {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+#order-online-section .order-online-button a {
+    background: #ea462b;
+    color: #fff;
+    padding: 14px 28px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: .3s ease-in-out
+}
+
+#order-online-section .order-online-button a:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1)
+}
+
+@media (min-width:577px) and (max-width:768px) {
+    #order-online-section .order-online-button a {
+        padding: 14px 12px
+    }
+}
+
+@media (min-width:768px) and (max-width:1024px) {
+    .head-content,
+    section.banner-section2 h2 {
+        font-size: 80px;
+        line-height: 88px
+    }
+}
+
+@media (max-width:991px) {
+    .reservation-btn,
+    .reservation-menu {
+        display: block
+    }
+    .next-content {
+        font-size: 14px;
+        font-weight: 300;
+        text-transform: none;
+        padding: 0 42px;
+        font-family: Lora, sans-serif
+    }
+    .next-btn,
+    .previous-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 20px
+    }
+    .banner-content {
+        font-size: 16px;
+        font-weight: 300
+    }
+    .navbar-nav .li a.active,
+    .navbar-nav .li a:hover {
+        color: #ea462b !important
+    }
+    a.nav-link {
+        color: red
+    }
+    .gallery-section-heading {
+        margin: 60px 0 20px
+    }
+    #contact-map h2 {
+        margin: 30px 0 20px
+    }
+    .gallery-section-heading h2 {
+        font-size: 32px;
+        line-height: 40px;
+        margin-top: 25px
+    }
+    #order-online-section .order-online-button a {
+        padding: 8px;
+        font-size: 13px;
+        margin: 0 5px
+    }
+}
+
+@media (max-width:576px) {
+    #order-online-section {
+        text-align: center;
+        margin-top: -110px;
+        padding: 5px 0 12px
+    }
+    #order-online-section:before {
+        background-size: cover
+    }
+    #order-online-section h3 {
+        font-size: 20px;
+        line-height: 27px
+    }
+    #order-online-section h3 em {
+        display: block
+    }
+    #order-online-section .order-online-button {
+        justify-content: center
+    }
+    section#hero-section {
+        height: 92vh
+    }
+}
+
+@media (min-width:577px) and (max-width:767px) {
+    #order-online-section h3 {
+        font-size: 20px;
+        line-height: 27px
+    }
+    #order-online-section {
+        margin-top: -80px
+    }
+}
+
+@media (max-width:767px) {
+    h1,
+    h2 {
+        line-height: 40px
+    }
+    h2 {
+        font-size: 32px;
+        margin-top: 25px
+    }
+    h1 {
+        font-size: 25px
+    }
+    #contact-map h2 {
+        padding-bottom: 0;
+        padding-top: 10px
+    }
+    .carousel-control-next,
+    .carousel-control-prev {
+        display: none
+    }
+    .gallery-section-heading {
+        margin: 5px 0;
+        padding-top: 25px
+    }
+    .gallery-section-heading h2 {
+        margin: 0
+    }
+    section#order-online-section .hm-orderonline {
+        text-align: center
+    }
+    section#order-online-section .hm-orderonline h3 {
+        font-size: 52px;
+        line-height: 60px;
+        margin-bottom: 8px
+    }
+    #order-online-section .order-online-button,
+    .order-now-btn {
+        justify-content: center
+    }
+    section#order-online-section .hm-orderonline h4 {
+        font-size: 22px;
+        line-height: 30px
+    }
+    .home-aboutimg {
+        padding: 0
+    }
+    section#about-section {
+        padding: 20px 0 35px
+    }
+    #about-section h2 {
+        margin-bottom: 20px;
+        font-size: 30px;
+        line-height: 40px;
+        margin-top: 0
+    }
+    section.services-section .services-box {
+        padding: 30px 0
+    }
+    .head-content {
+        font-size: 40px;
+        line-height: 42px;
+        padding: 0
+    }
+    section.banner-section2 h2 {
+        font-size: 40px;
+        line-height: 50px
+    }
+    .banner-box p {
+        margin-top: 0
+    }
+    .h2 {
+        font-size: 42px;
+        line-height: 50px
+    }
+    #order-online-section h3 {
+        font-size: 20px;
+        line-height: 27px;
+        margin-bottom: 15px;
+        text-align: center
+    }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+    #order-online-section h3 {
+        font-size: 20px;
+        line-height: 27px;
+        margin-bottom: 0;
+        text-align: left
+    }
+    #order-online-section .order-online-button {
+        justify-content: flex-end
+    }
+}
+

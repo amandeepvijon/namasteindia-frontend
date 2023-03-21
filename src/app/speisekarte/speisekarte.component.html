@@ -1,0 +1,1222 @@
+<!-- page-banner-section
+			================================================== -->
+      <section class="speisekarte-banner-section">
+        <div class="container">
+                  <h1>Speisekarte </h1>
+        </div>
+      </section>
+          <!-- End page-banner section -->
+      <!-- menu-section
+        ================================================== -->
+      <section class="speisekarte-cnt-area" id="menu-bar">
+        <div class="speisekarte-cnt">
+          <div class="container">
+                <div class="row">
+                  <div class="col">
+                 <div *ngIf="toggleDiv">
+                  <div class="col-lg-12 col-md-12 col-xs-12" *ngFor="let menuData of categorymenuData">
+                    <div class="speisekarte-holder">
+                     <h6>Speisekarte</h6>
+                      <h3>{{menuData.name}}</h3>
+                      <img class="menu-top-left" src="assets/img/menu-top-left.svg" alt="menu-top-left">
+                     <img class="menu-top-right" src="assets/img/menu-top-right.svg" alt="menu-top-right">
+                     <img class="menu-btm-right" src="assets/img/menu-btm-right.svg" alt="menu-btm-right">
+                     <img class="menu-btm-left"  src="assets/img/menu-btm-left.svg" alt="menu-btm-left">
+                      <ul class="menu-list">
+                        <li *ngFor="let item of menuData.items">
+                          <div class="menu-cont">
+                            <h4>
+                             <span class="title-menu">{{item.item}}</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">{{item.price}} €</span>
+                            </h4>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                 </div>
+
+                  <div    *ngIf="!toggleDiv">
+                      <div class="btntoggle">
+                        <a   [href]="pdfSource" target="_blank" class="pdfbtn">Download Menu</a>
+
+                      </div>
+                      <div class="pdfshow">
+                    <pdf-viewer target="_blank"  style="height: 600px;width: 0px;"
+                    [src]="pdfSource"
+                    [render-text]="true"
+                    [original-size]="false"
+                    style="width:3000px; height: 900px"
+                  ></pdf-viewer>
+                      </div>
+                </div>
+
+
+                     <!-- <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">M 2 Gyros Teller</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">11,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">M 3 Bandnudeln</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">10,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">M 4 Hähnchen mit Paprikasoße</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">11,50 €</span>
+                            </h4>
+                          </div>
+                          </li>
+                          <li>
+                            <div class="menu-cont">
+                              <h4>
+                                <span class="title-menu">M 5 Schollenfilet</span>
+                                <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                                <span class="price">11,50 €</span>
+                              </h4>
+                            </div>
+                            </li>
+                          <li>
+                            <div class="menu-cont">
+                              <h4>
+                                <span class="title-menu">Nachtisch</span>
+                                <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                                <span class="price">5,50 €</span>
+                              </h4>
+                            </div>
+                          </li> -->
+                  <!-- <div class="col-lg-12 col-md-12 col-xs-12">
+                    <div class="speisekarte-holder">
+                      <h6>Speisekarte</h6>
+                       <h3>Suppen</h3>
+                       <img class="menu-top-left" src="assets/img/menu-top-left.svg" alt="menu-top-left">
+                      <img class="menu-top-right" src="assets/img/menu-top-right.svg" alt="menu-top-right">
+                      <img class="menu-btm-right" src="assets/img/menu-btm-right.svg" alt="menu-btm-right">
+                      <img class="menu-btm-left" src="assets/img/menu-btm-left.svg" alt="menu-btm-left">
+                       <ul class="menu-list">
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">1. Hühnersuppe</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">5,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">2. Gemüsesuppe</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">5,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">3. Gemüsesuppe</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">5,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+
+                       </ul>
+                     </div>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="speisekarte-holder">
+                      <h6>Speisekarte</h6>
+                       <h3>Warme Vorspeisen</h3>
+                       <img class="menu-top-left" src="assets/img/menu-top-left.svg" alt="menu-top-left">
+                      <img class="menu-top-right" src="assets/img/menu-top-right.svg" alt="menu-top-right">
+                      <img class="menu-btm-right" src="assets/img/menu-btm-right.svg" alt="menu-btm-right">
+                      <img class="menu-btm-left" src="assets/img/menu-btm-left.svg" alt="menu-btm-left">
+                       <ul class="menu-list">
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">10. Zucchini gebraten mit Tzatzik</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price"> 7,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">11. Aubergine gebraten mit Tzatziki</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price"> 7,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">12. Gigantes (Riesenbohnen)</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">6,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">13. Gebratene Sardienen mit Tzatziki</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">11,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">14. Octupus nach Art des Hauses</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">12,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">15. Saganaki (gebackener Feta - Käse)</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">7,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">20. Scampi Saganaki (Scampi mit Feta - Käse) </span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">11,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">21. Schafskäse im Steintopf Natur gebackener Schafkäse mit Knoblauch und Peperoni</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">10,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">22. Folienkartoffel mit Tzatziki</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">5,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">23. Knoblauch Garnele-Gambas al olio</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">11,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">24. Gemischter warmer Vorspeisenteller</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">14,00 €</span>
+                             </h4>
+                           </div>
+                         </li>
+
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">25. Gegrillte Peperoni</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">5,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                        </ul>
+                     </div>
+                  </div>
+
+
+                  <div class="col-lg-12 col-md-12 col-xs-12">
+                    <div class="speisekarte-holder">
+                      <h6>Speisekarte</h6>
+                       <h3>Kalte Vorspeisen</h3>
+                       <img class="menu-top-left" src="assets/img/menu-top-left.svg" alt="menu-top-left">
+                      <img class="menu-top-right" src="assets/img/menu-top-right.svg" alt="menu-top-right">
+                      <img class="menu-btm-right" src="assets/img/menu-btm-right.svg" alt="menu-btm-right">
+                      <img class="menu-btm-left" src="assets/img/menu-btm-left.svg" alt="menu-btm-left">
+                       <ul class="menu-list">
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">26. Tzatziki (griechischer Joghurt mit Knoblauch)</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">5,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">27. Tirosalata pikante Schafskäse Creme</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">6,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">29. Oliven (Portion)</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">5,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">30. Ntolmadakia (Weinblätter gefüllt mit Reis)</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">6,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+
+                        <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">31. Pikilia (Vorspeisenplatte) </span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">13,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+                      </ul>
+                     </div>
+                  </div>
+
+
+                  <div class="col-lg-12 col-md-12 col-xs-12">
+                    <div class="speisekarte-holder">
+                      <h6>Speisekarte</h6>
+                       <h3>Salat Spezialitäten</h3>
+                       <img class="menu-top-left" src="assets/img/menu-top-left.svg" alt="menu-top-left">
+                      <img class="menu-top-right" src="assets/img/menu-top-right.svg" alt="menu-top-right">
+                      <img class="menu-btm-right" src="assets/img/menu-btm-right.svg" alt="menu-btm-right">
+                      <img class="menu-btm-left" src="assets/img/menu-btm-left.svg" alt="menu-btm-left">
+                       <ul class="menu-list">
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">41. Bauernsalat</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">10,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">43. Bunter gemischter Salat mit Rindfleischstreifen</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">14,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">44. Mykonos Salat</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">11,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">46. Fitness Salat</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">13,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+
+                        <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">48. Omelette Spezial</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">10,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+
+                        <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">49. Portion Feta</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">7,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+                      </ul>
+                     </div>
+                  </div>
+
+
+                  <div class="col-lg-12 col-md-12 col-xs-12">
+                    <div class="speisekarte-holder">
+                      <h6>Speisekarte</h6>
+                       <h3>Unsere Hausspezialitäten</h3>
+                       <img class="menu-top-left" src="assets/img/menu-top-left.svg" alt="menu-top-left">
+                      <img class="menu-top-right" src="assets/img/menu-top-right.svg" alt="menu-top-right">
+                      <img class="menu-btm-right" src="assets/img/menu-btm-right.svg" alt="menu-btm-right">
+                      <img class="menu-btm-left" src="assets/img/menu-btm-left.svg" alt="menu-btm-left">
+                       <ul class="menu-list">
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">55. König Hellas Platte (für eine Person)</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">18,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">56. Olympos Hellas Platte (für eine Person)</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">19,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">56. Olympos Hellas Platte (für zwei Personen )</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">38,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">57. Souvlaki </span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">16,00 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+
+                        <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">58. Riganato</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">16,00 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+
+                        <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">59. Riganato Spezial</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">16,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">60. Gyros Teller</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">15,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">61. Gyros Pfanne</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">16,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">62. Gyros überbacken</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">16,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">63. Lammkoteletts</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">21,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">64. Lammfilets</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">23,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">65. Putenspieß</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">17,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">66. Mix - Teller</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">17,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">67. Mix - Grill</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">20,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">68. Lammsteak</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">21,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">69. Zarter Lammspieß</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">22,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+                      </ul>
+                     </div>
+                  </div>
+
+
+                  <div class="col-lg-12 col-md-12 col-xs-12">
+                    <div class="speisekarte-holder">
+                      <h6>Speisekarte</h6>
+                       <h3>Griechische Spezialitäten</h3>
+                       <img class="menu-top-left" src="assets/img/menu-top-left.svg" alt="menu-top-left">
+                      <img class="menu-top-right" src="assets/img/menu-top-right.svg" alt="menu-top-right">
+                      <img class="menu-btm-right" src="assets/img/menu-btm-right.svg" alt="menu-btm-right">
+                      <img class="menu-btm-left" src="assets/img/menu-btm-left.svg" alt="menu-btm-left">
+                       <ul class="menu-list">
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">70. Mussaka</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">15,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">71. Lamm - Eintopf</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">17,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">73. Bifteki</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">16,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">74. Lammteller</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">21,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+                      </ul>
+                     </div>
+                  </div>
+
+
+
+                  <div class="col-lg-12 col-md-12 col-xs-12">
+                    <div class="speisekarte-holder">
+                      <h6>Speisekarte</h6>
+                       <h3>Fischgerichte</h3>
+                       <img class="menu-top-left" src="assets/img/menu-top-left.svg" alt="menu-top-left">
+                      <img class="menu-top-right" src="assets/img/menu-top-right.svg" alt="menu-top-right">
+                      <img class="menu-btm-right" src="assets/img/menu-btm-right.svg" alt="menu-btm-right">
+                      <img class="menu-btm-left" src="assets/img/menu-btm-left.svg" alt="menu-btm-left">
+                       <ul class="menu-list">
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">80. Garides (Scampis)</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">20,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">81. Calamares</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">16,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">82. Baby Calamares nach Art des Hauses</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">17,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">83. Zanderfilet gegrillt</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">17,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">85. Frischer Lachs vom Grill</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">20,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">86. Doradefilet</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">19,00 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">88. Gemischte Fischplatte</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">22,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+                      </ul>
+                     </div>
+                  </div>
+
+
+
+                  <div class="col-lg-12 col-md-12 col-xs-12">
+                    <div class="speisekarte-holder">
+                      <h6>Speisekarte</h6>
+                       <h3>Vom Schwein</h3>
+                       <img class="menu-top-left" src="assets/img/menu-top-left.svg" alt="menu-top-left">
+                      <img class="menu-top-right" src="assets/img/menu-top-right.svg" alt="menu-top-right">
+                      <img class="menu-btm-right" src="assets/img/menu-btm-right.svg" alt="menu-btm-right">
+                      <img class="menu-btm-left" src="assets/img/menu-btm-left.svg" alt="menu-btm-left">
+                       <ul class="menu-list">
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">90. Schnitzel Wiener Art</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">13,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">93. Jägerschnitzel</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">15,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">94. Rahmschnitzel</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">15,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">95. Gordon Bleu</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">15,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">97. Pfifferling - Schnitzel</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">15,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">100. Blumenkohlschnitzel</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">15,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">102. Zwiebel - Schnitzel</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">15,00 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">103. Holsteiner Schnitzel</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">15,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">104. Pfefferschnitzel</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">15,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">107. Schlemmer - Schnitzel</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">15,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">109. Pustaschnitzel</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">15,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+
+                      </ul>
+                     </div>
+                  </div>
+
+
+
+                  <div class="col-lg-12 col-md-12 col-xs-12">
+                    <div class="speisekarte-holder">
+                      <h6>Speisekarte</h6>
+                       <h3>Lende vom Schwein</h3>
+                       <img class="menu-top-left" src="assets/img/menu-top-left.svg" alt="menu-top-left">
+                      <img class="menu-top-right" src="assets/img/menu-top-right.svg" alt="menu-top-right">
+                      <img class="menu-btm-right" src="assets/img/menu-btm-right.svg" alt="menu-btm-right">
+                      <img class="menu-btm-left" src="assets/img/menu-btm-left.svg" alt="menu-btm-left">
+                       <ul class="menu-list">
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">120. Schweinelende (mit Pfifferlingrahmsoße)</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">17,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">121. Schweinelende (mit Champignonsoße)</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">17,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">122. Schweinelende (mit grünem Pfeffer, in Sahnesoße )</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">17,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">124. Lemonato</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">17,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">125. Hacksteak 2 Stück</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">15,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+                      </ul>
+                     </div>
+                  </div>
+
+
+
+                  <div class="col-lg-12 col-md-12 col-xs-12">
+                    <div class="speisekarte-holder">
+                      <h6>Speisekarte</h6>
+                       <h3>Vom Rind</h3>
+                       <img class="menu-top-left" src="assets/img/menu-top-left.svg" alt="menu-top-left">
+                      <img class="menu-top-right" src="assets/img/menu-top-right.svg" alt="menu-top-right">
+                      <img class="menu-btm-right" src="assets/img/menu-btm-right.svg" alt="menu-btm-right">
+                      <img class="menu-btm-left" src="assets/img/menu-btm-left.svg" alt="menu-btm-left">
+                       <ul class="menu-list">
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">126. Rumpsteak</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">23,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">127. Pfeffersteak Rumpsteak</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">24,00 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">128. Kräutersteak Rumpsteak</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">23,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">29. Rumpsteak mit Soße Bernaise und Champions</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">24,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+                      </ul>
+                     </div>
+                  </div>
+
+
+                  <div class="col-lg-12 col-md-12 col-xs-12">
+                    <div class="speisekarte-holder">
+                      <h6>Speisekarte</h6>
+                       <h3>Geflügel</h3>
+                       <img class="menu-top-left" src="assets/img/menu-top-left.svg" alt="menu-top-left">
+                      <img class="menu-top-right" src="assets/img/menu-top-right.svg" alt="menu-top-right">
+                      <img class="menu-btm-right" src="assets/img/menu-btm-right.svg" alt="menu-btm-right">
+                      <img class="menu-btm-left" src="assets/img/menu-btm-left.svg" alt="menu-btm-left">
+                       <ul class="menu-list">
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">130. Souvlaki-Spieß (Hähnchenfleisch)</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">16,00 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">131. Hähnchenbrustfilet </span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">16,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">132. Hähnchenschnitzel</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">15,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">133. Putengeschnetzeltess</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">16,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+                        <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">134. Putenbrustfilet</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">16,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+                      </ul>
+                     </div>
+                  </div>
+
+                  <div class="col-lg-12 col-md-12 col-xs-12">
+                    <div class="speisekarte-holder">
+                      <h6>Speisekarte</h6>
+                       <h3>Nudelgerichte</h3>
+                       <img class="menu-top-left" src="assets/img/menu-top-left.svg" alt="menu-top-left">
+                      <img class="menu-top-right" src="assets/img/menu-top-right.svg" alt="menu-top-right">
+                      <img class="menu-btm-right" src="assets/img/menu-btm-right.svg" alt="menu-btm-right">
+                      <img class="menu-btm-left" src="assets/img/menu-btm-left.svg" alt="menu-btm-left">
+                       <ul class="menu-list">
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">136. Spaghetti Aglio Olio Peperoncino</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">10,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">138. Tagliatelle Lachs</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">13,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">140. Bandnudeln</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">14,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">141. Spaghetti</span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">11,50 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+                      </ul>
+                     </div>
+                  </div>
+
+
+
+                  <div class="col-lg-12 col-md-12 col-xs-12">
+                    <div class="speisekarte-holder">
+                      <h6>Speisekarte</h6>
+                       <h3>Für unsere kleinen Gäste</h3>
+                       <img class="menu-top-left" src="assets/img/menu-top-left.svg" alt="menu-top-left">
+                      <img class="menu-top-right" src="assets/img/menu-top-right.svg" alt="menu-top-right">
+                      <img class="menu-btm-right" src="assets/img/menu-btm-right.svg" alt="menu-btm-right">
+                      <img class="menu-btm-left" src="assets/img/menu-btm-left.svg" alt="menu-btm-left">
+                       <ul class="menu-list">
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">144. Schnitzel</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">7,00 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">145. Chicken</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">7,00 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">146. Souvlaki</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">7,00 €</span>
+                             </h4>
+                           </div>
+                         </li>
+
+                         <li>
+                          <div class="menu-cont">
+                            <h4>
+                              <span class="title-menu">147. Spaghetti </span>
+                              <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                              <span class="price">7,00 €</span>
+                            </h4>
+                          </div>
+                        </li>
+
+                      </ul>
+                     </div>
+                  </div> -->
+
+
+<!--
+                  <div class="col-lg-12 col-md-12 col-xs-12">
+                    <div class="speisekarte-holder">
+                      <h6>Speisekarte</h6>
+                       <h3>Extra Beilagen</h3>
+                       <img class="menu-top-left" src="assets/img/menu-top-left.svg" alt="menu-top-left">
+                      <img class="menu-top-right" src="assets/img/menu-top-right.svg" alt="menu-top-right">
+                      <img class="menu-btm-right" src="assets/img/menu-btm-right.svg" alt="menu-btm-right">
+                      <img class="menu-btm-left" src="assets/img/menu-btm-left.svg" alt="menu-btm-left">
+                       <ul class="menu-list">
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">150. Bratkartoffeln </span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">4,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">151. griechische Nudeln</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">4,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">152. Butterreis</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">4,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+
+                      </ul>
+                     </div>
+                  </div> -->
+
+<!--
+                  <div class="col-lg-12 col-md-12 col-xs-12">
+                    <div class="speisekarte-holder">
+                      <h6>Speisekarte</h6>
+                       <h3>Desserts</h3>
+                       <img class="menu-top-left" src="assets/img/menu-top-left.svg" alt="menu-top-left">
+                      <img class="menu-top-right" src="assets/img/menu-top-right.svg" alt="menu-top-right">
+                      <img class="menu-btm-right" src="assets/img/menu-btm-right.svg" alt="menu-btm-right">
+                      <img class="menu-btm-left" src="assets/img/menu-btm-left.svg" alt="menu-btm-left">
+                       <ul class="menu-list">
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">160. Joghurt mit Honig und Walnüssen</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">6,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">161. Gemischtes Eis</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">6,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+                         <li>
+                           <div class="menu-cont">
+                             <h4>
+                               <span class="title-menu">162. Vanille Eis</span>
+                               <span class="menu-dot"> <img src="assets/img/dot.svg" alt="namaste-india"></span>
+                               <span class="price">6,50 €</span>
+                             </h4>
+                           </div>
+                         </li>
+
+                      </ul>
+                     </div>
+                  </div> -->
+
+                </div><!--row-close-->
+            </div>
+        </div>
+      </div>
+    </section>
+      <!-- End menu section -->
+
+      <!-- banner-section
+        ================================================== -->
+        <section class="banner-section2">
+          <div class="container">
+            <div class="banner-box">
+              <h2 class="marbot15 wow fadeInLeft animated mb-0" data-wow-delay="300ms">Reservieren Sie Einen Tisch</h2>
+              <!-- <p class="menu-time">Dienstag bis Samstag:11:00 - 14:00 & 17:00 - 23:00 Uhr</p> -->
+              <button type="submit"  class="btn-submit"  (click)="reservation()">Zur Reservierung</button>
+            </div>
+          </div>
+        </section>
+      <!-- End banner section -->
+

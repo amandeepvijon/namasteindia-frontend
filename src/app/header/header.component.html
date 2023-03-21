@@ -1,0 +1,53 @@
+
+  <!-- Header ================================================== -->
+      <header  class="main-header">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" (click)="activeClass.setActiveClass('hero-section');scrollTo('hero-section')"  routerLink="/">
+           <img [src]="env.apiBaseUrl + '/logo/'+ env.restaurantId"  crossorigin="anonymous"  width="124"  alt="zum-engel ">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              <span class="toggler-icon"></span>
+              <span class="toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse nav-links " id="collapseExample">
+              <ul class="navbar-nav m-auto">
+                <li class="link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="activeClass.setActiveClass('hero-section');scrollTo('hero-section')">
+                  <a   routerLink=""  [ngStyle]="activeClass.active==undefined ? {'color': '#eeaf1c'} : {'color': ''}" >Home </a>
+                </li>
+                <li class="link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="activeClass.setActiveClass('about-section');scrollTo('about-section')">
+                  <a   routerLinkActive="active" routerLink="" [ngStyle]="activeClass.active=='about-section' ? {'color': '#eeaf1c'} : {'color': ''}" >Über Uns</a>
+                </li>
+                <li class="link"  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="activeClass.setActiveClass('menu-section'); scrollTo('menu-section')">
+                  <a   routerLinkActive="active"  routerLink=""  [ngStyle]="activeClass.active=='menu-section' ? {'color': '#eeaf1c'} : {'color': ''}" >Speisekarte</a>
+                </li>
+                <li class="link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="activeClass.setActiveClass('gallery-section-heading'); scrollTo('gallery-section-heading')">
+                  <a   routerLinkActive="active" routerLink="" [ngStyle]="activeClass.active=='gallery-section-heading' ? {'color': '#eeaf1c'} : {'color': ''}">Galerie </a>
+                </li>
+                <li class="link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="activeClass.setActiveClass('contact-map');scrollTo('contact-map')">
+                  <a  routerLinkActive="active" routerLink="" [ngStyle]="activeClass.active=='contact-map' ? {'color': '#eeaf1c'} : {'color': ''}">Kontakt </a>
+                </li>
+                <li class="reservation-btn" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="activeClass.setActiveClass('resActive')">
+                  <a [routerLink]="'/reservierung'" [ngStyle]="activeClass.active=='resActive' ? {'color': '#eeaf1c'} : {'color': ''}" >reservierung </a>
+                </li>
+                <li class="reservation-btn"  (click)="activeClass.setActiveClass('resActive2')">
+                  <a  href="{{linkUrl?.urlData}}"   [ngStyle]="activeClass.active=='resActive2' ? {'color': '#eeaf1c'} : {'color': ''}">Jetzt Bestellen! </a>
+                </li>
+              </ul>
+            </div>
+              <a class="button-one header-online"  href="{{linkUrl?.urlData}}">Jetzt Bestellen!</a>
+              <a class="button-one header-btn"  (click)="activeClass.setActiveClass('resActiveButton')"    (click)="scrollTop()"   [routerLink]="['/reservierung']" routerLinkActive="active">Reservierung</a>
+          </div>
+        </nav>
+      </header>
+      <!-- End Header -->
+      <div class="animated-order-online">
+        <div class="rotating"></div>
+        <a  href="{{linkUrl?.urlData}}">
+          <span> <img  src="assets/img/order-online-icon.svg" alt="namaste-india"></span>
+          <p>Jetzt Bestellen!</p>
+        </a>
+     </div>
+
+
+

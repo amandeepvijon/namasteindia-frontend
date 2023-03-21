@@ -1,0 +1,156 @@
+<!-- no use -->
+
+<!-- page-banner-section
+			================================================== -->
+      <section class="page-banner-section">
+        <div class="container">
+                  <h1>Einen Tisch reservieren</h1>
+                  <!-- <span>mit Open Table unten oder rufen </span> -->
+        </div>
+      </section>
+          <!-- End page-banner section -->
+      <!-- contact-section
+        ================================================== -->
+      <section class="contact-section" id="contact-section">
+          <div class="container">
+              <div class="row contact-area">
+                    <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12">
+                      <div class="contact-box">
+                        <form id="reservation-form" [formGroup]="booktableForm"  (ngSubmit)="onClickSubmit()" class="table-book-popup">
+                              <div class="row">
+                                  <div class="col-lg-12">
+                                      <h3>Reservierung</h3>
+                                  </div>
+                              </div>
+
+                              <div class="row">
+
+                                    <div class="col-lg-6 col-md-12 col-sm-6">
+                                        <label for="name">Name</label>
+                                        <input name="name" id="name" type="text"    class="form-control" placeholder="Name"  formControlName="name" required=""
+                                        [ngClass]="(!booktableForm.get('name')?.valid && booktableForm.get('name')?.touched
+                                        &&  booktableForm.get('name')?.touched && f['name'].errors) ? 'border-danger': 'red'"/>
+                                        <span  class="text-center text-danger" *ngIf="!booktableForm.get('name')?.valid && booktableForm.get('name')?.touched
+                                        && booktableForm.get('name')?.touched && f['name'].errors">
+                                        <p class="err" *ngIf="f['name'].errors?.['required']">This field is required.</p>
+                                        </span>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 col-sm-6">
+                                      <label for="email" class="email-label">Email</label>
+                                      <input name="email" id="email" type="text"  class="form-control" placeholder="email" formControlName="email" required=""
+                                      [ngClass]="(!booktableForm.get('email')?.valid && booktableForm.get('email')?.touched
+                                      &&  booktableForm.get('email')?.touched && f['email'].errors) ? 'border-danger': 'red'"/>
+                                      <span  class="text-center text-danger" *ngIf="!booktableForm.get('email')?.valid && booktableForm.get('email')?.touched
+                                      && booktableForm.get('email')?.touched && f['email'].errors">
+                                      <p class="err" *ngIf="f['email'].errors?.['required']">This field is required.</p>
+                                      </span>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 col-sm-6 date-picker-field">
+                                      <label for="date">Datum</label>
+                                      <input readonly placeholder="dd-mm-yyyy"  (dateChange)="addEvent($event)" matInput [matDatepicker]="dp" [min]="minDate" (click)="dp.open()" (focus)="dp.open()" formControlName="dateOfResv"
+                                       [ngClass]="(!booktableForm.get('dateOfResv')?.valid && booktableForm.get('dateOfResv')?.touched
+                                      &&  booktableForm.get('dateOfResv')?.touched && f['dateOfResv'].errors) ? 'border-danger': 'red'"/>
+                                      <span  class="text-center text-danger" *ngIf="!booktableForm.get('dateOfResv')?.valid && booktableForm.get('dateOfResv')?.touched
+                                      && booktableForm.get('dateOfResv')?.touched && f['dateOfResv'].errors">
+                                      <p class="err" *ngIf="f['dateOfResv'].errors?.['required']">This field is required.</p>
+                                      </span>
+
+                                      <i class="fa fa-calendar" (click)="dp.open()"></i>
+                                      <mat-datepicker #dp ></mat-datepicker>
+
+                                      <span class="errorMsg" *ngIf="timeMessage">{{timeMessage}}</span>
+                                    </div>
+                              <div class="col-lg-6 col-md-12 col-sm-6">
+                                  <label for="time">Zeit</label>
+
+                                  <div class="24hr-example time-input-box">
+
+                                         <select class="form-control time-zone"  formControlName="timeOfResv"
+                                          [ngClass]="(!booktableForm.get('timeOfResv')?.valid && booktableForm.get('timeOfResv')?.touched
+                                          &&  booktableForm.get('timeOfResv')?.touched && f['timeOfResv'].errors) ? 'border-danger': 'red'">
+                                          <span  class="text-center text-danger" *ngIf="!booktableForm.get('timeOfResv')?.valid && booktableForm.get('timeOfResv')?.touched
+                                          && booktableForm.get('timeOfResv')?.touched && f['timeOfResv'].errors">
+                                          <p class="err" *ngIf="f['timeOfResv'].errors?.['required']">This field is required.</p>
+                                          </span>
+                                            <option *ngFor="let item of arrayData" [value]="item">{{item}}</option>
+                                          </select>
+                                         <i class="fa fa-clock-o time-pic"  aria-hidden="true"></i>
+                                  </div>
+
+                             </div>
+
+                                  <div class="col-lg-6 col-md-12 col-sm-6">
+                                    <label for="phoneNumber">Telefon</label>
+                                    <input name="phoneNumber" id="phoneNumber" class="form-control" type="number" placeholder="Telefon"  maxlength="16"  minlength="6"  formControlName="phoneNumber"
+                                    [ngClass]="(!booktableForm.get('phoneNumber')?.valid && booktableForm.get('phone')?.touched
+                                        && booktableForm.get('phoneNumber')?.touched && f['phone'].errors) ? 'border-danger': 'red'"/>
+                                        <span  class="text-center text-danger" *ngIf="!booktableForm.get('phoneNumber')?.valid && booktableForm.get('phoneNumber')?.touched
+                                        && booktableForm.get('phoneNumber')?.touched && f['phoneNumber'].errors">
+                                        <p class="err" *ngIf="f['phoneNumber'].errors?.['required']"> Phonenumber is required</p>
+                                        <p class="err" *ngIf="f['phoneNumber'].errors?.['pattern']">Phonenumber is atleast  10 digits </p>
+                                      </span>
+                                  </div>
+                                  <div class="col-lg-6 col-md-12 col-sm-6">
+                                        <label for="guest">Anzahl der Gäste</label>
+                                        <input  type="number" class="form-control"   formControlName="totalPerson"
+                                        [ngClass]="(!booktableForm.get('totalPerson')?.valid && booktableForm.get('totalPerson')?.touched &&  booktableForm.get('totalPerson')?.touched && f['totalPerson'].errors) ? 'border-danger': ''"/>
+                                        <span  class="text-center text-danger" *ngIf="!booktableForm.get('totalPerson')?.valid && booktableForm.get('totalPerson')?.touched
+                                        && booktableForm.get('totalPerson')?.touched && f['totalPerson'].errors">
+                                        <p class="err" *ngIf="f['totalPerson'].errors?.['required']">This field is required.</p>
+                                      </span>
+                                  </div>
+                                </div>
+                           <div class="col-lg-12">
+                            <label   for="comment" class="nachricht">Nachricht</label>
+                            <textarea name="comment" id="comment" class="form-control" placeholder="Nachricht eingeben" formControlName="notes"></textarea>
+                           </div>
+                            <div class="">
+                               <!-- <button type="submit"  class="btn-submit"   [disabled]="booktableForm.invalid">Einen Tisch Finden</button> -->
+                               <button  type="submit" id="submit"   class="btn-submit"  [disabled]="booktableForm.invalid || showspinner || timeMessage">
+                                <span *ngIf="!showspinner">Jetzt Reservieren</span>
+                                <span *ngIf="showspinner" class="spinner-border"></span>
+                              </button>
+                            </div>
+                        </form>
+                    </div>
+                </div><!--col-7-close-->
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12 contact-cnt-style">
+
+                    <div class="contact-for-booking text-center">
+                      <img  src="assets/img/table-booking-icon2.svg">
+                      <h3>Besuchen Sie
+                        <br>
+                        unser Restaurant</h3>
+                      <h5>Buchungsanfrage auf Abruf</h5>
+                      <!-- <h4><a href="tel:+49 06190 3735">+49 06190 3735</a></h4> -->
+                       <h4><a href="tel:+{{reservationData.Mobile}}">+{{reservationData.Mobile}}</a></h4>
+                      <!-- <p>
+                        <span>Standort</span>
+                        Griechisches Restaurant
+                        <br>
+                        Hauptstraße 25,
+                        <br>
+                        65795 Hattersheim am Main.
+                      </p> -->
+                      <p [innerHTML]="reservationData?.Address"></p>
+                      <!-- <a class="get-location" target="_blank" href="https://www.google.com/maps?ll=50.069665,8.486584&z=16&t=m&hl=en&gl=IN&mapclient=embed&q=Hauptstra%C3%9Fe+25+65795+Hattersheim+am+Main+Germany">Wegbeschreibungen</a> -->
+                      <a class="get-location" target="_blank"  *ngIf="reservationData" href="{{reservationData.Link}}">
+                        Wegbeschreibungen</a>
+                        <!-- <iframe  class="get-location" target="_blank"   *ngIf="reservationData" [src]="reservationData"
+                        width="100%" height="450" style="border:0;" allowfullscreen="">Wegbeschreibungen</iframe> -->
+                    </div>
+                </div>
+              </div>
+          </div>
+      </section>
+     <!--  google-map-reservation-form -->
+ <div class="container-fluid reservation-map">
+        <div class="row">
+          <div class="col-lg-12 p-0">
+          <iframe *ngIf="locationData" [src]="locationData"
+          width="100%" height="450" style="border:0;" allowfullscreen=""></iframe>
+        </div>
+      </div>
+      <!--new--map-->
+

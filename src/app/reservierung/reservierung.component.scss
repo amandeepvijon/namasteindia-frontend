@@ -1,0 +1,135 @@
+.err,
+.errorMsg {
+    color: red
+}
+
+.thankyou-popup {
+    padding: 50px 0
+}
+
+.thankyou-popup i {
+    background: #ea462b;
+    font-size: 30px;
+    font-weight: 300;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin: 0 auto 25px
+}
+
+.thankyou-popup h1 {
+    font-size: 46px;
+    line-height: 54px;
+    font-weight: 300
+}
+
+.thankyou-popup p {
+    margin-bottom: 30px
+}
+
+.contact-box .title-section h2 {
+    font-size: 48px;
+    color: #006;
+    line-height: 56px;
+    font-family: Forum
+}
+
+.nachricht {
+    margin: 0 0 5px
+}
+
+@media(max-width:767px) {
+    .formSection {
+        height: 80vh !important
+    }
+}
+
+@media(max-width:991px) {
+    .table-book-popup {
+        font-size: 22px;
+        line-height: 32px
+    }
+}
+
+input#session-time {
+    display: inline-block;
+    position: relative
+}
+
+input[type=time]::-webkit-calendar-picker-indicator {
+    background: 0 0/0;
+    bottom: 0;
+    color: #000;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto
+}
+
+#reservation-form .time-picker {
+    background: url('../../assets/img/time-icon.svg') right 12px center/20px 20px no-repeat
+}
+
+@media(min-width:768px) {
+    .footer-fixed-bar {
+        display: none
+    }
+}
+
+.timepicker {
+    background: 0 0;
+    padding: 0
+}
+
+::ng-deep .header.timepicker__header.active {
+    background: 0 0;
+    padding: 0
+}
+
+.timepicker header.timepicker__header,
+.timepicker header.timepicker__header.active {
+    display: none !important;
+    position: inherit !important;
+    visibility: hidden !important;
+    opacity: 0 !important
+}
+
+.errorMsg {
+    font-size: 15px;
+    position: relative;
+    top: -10px
+}
+
+.time-pic {
+    position: absolute;
+    right: 11px;
+    top: 19px;
+    font-size: 21px;
+    color: #eeaf1c;
+}
+
+@media (max-width:768px) {
+    .section.page-banner-section h1 {
+        font-size: 32px
+    }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+    section.contact-section .contact-box {
+        padding: 60px 0px;
+    }
+    #reservation-form input, #reservation-form textarea, #reservation-form select {
+        margin: 0 0 12px;
+    }
+    #contact-form label, #reservation-form label{
+        line-height: 15px;
+        margin-bottom: 4px;
+    }
+}
